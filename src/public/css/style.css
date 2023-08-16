@@ -1,0 +1,414 @@
+body{
+    background-color: #181f2a;
+    color: whitesmoke;
+    margin: 9px;
+    margin-left: 15px;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*Sección de Controles*/
+.mainBox{
+    width: 24%;
+    height: 80%;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+    box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#menu{
+    display: flex;
+    text-align:initial;
+}
+
+.link{
+    color: black;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 12px;
+    background-color: darkgray;
+}
+
+.link:hover{
+    color: darkslategray;
+    cursor: pointer;
+}
+
+#button{
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    background-color: aqua;
+    color: black;
+    margin-bottom: 20px;
+}
+
+#emotionsButton{
+    display: none;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    background-color: aqua;
+    color: black;
+    margin-bottom: 20px;
+}
+
+#objButton{
+    display: none;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    background-color: aqua;
+    color: black;
+    margin-bottom: 20px;
+}
+
+#emotionsButton:hover{
+    background-color:darkcyan;
+    cursor: pointer;
+}
+
+#button:hover{
+    background-color:darkcyan;
+    cursor: pointer;
+}
+
+.timeBox{
+    text-align: justify;
+}
+
+#emotionsTimeBox{
+    display: none;
+}
+
+#objectTimeBox{
+    display: none;
+}
+
+.setTime{
+    border-radius: 5px;
+    width: 23%;
+    margin-top: 10px;
+}
+
+.setTime:hover{
+    cursor: pointer;
+}
+
+.setTimeButton:hover{
+    color: darkslategray;
+    cursor: pointer;
+}
+
+.alerts{
+    font-size: 16px;
+}
+
+.alertsform{
+    flex-wrap: wrap;
+    display: flex;
+    margin-left: 10px;
+}
+
+#alerta1{
+    margin-left: 11px;
+}
+
+#setAlerta1{
+    margin-left: 16px;
+}
+
+#alerta2{
+    margin-left: 43px;
+}
+
+#setAlerta2{
+    margin-left: 15px;
+}
+
+#alerta3{
+    margin-left: 55px;
+}
+
+#setAlerta3{
+    margin-left: 16px;
+}
+
+#alerta4{
+    margin-left: 26px;
+}
+
+#setAlerta4{
+    margin-left: 15px;
+}
+
+label{
+    margin: 10px;
+}
+
+#clearHistB{
+    display: block;
+    margin: 1px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#clearHistB:hover{
+    color: darkslategray;
+    cursor: pointer;
+}
+
+.alertasBox{
+    text-align: center;
+    width: 100%;
+    height: 224px;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+    box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+#alertas p{
+    text-align: center;
+}
+/*Sección de Monitoreo*/
+#videos{
+    padding-left: 20px;
+}
+
+#play{
+    margin-left: 10px;
+    width: 108%;
+    height: 96%;
+}
+/*Sección de Base de datos*/
+#bd{
+    flex-wrap: wrap;
+    margin-left: 20px;
+    width: 72%;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+    box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#dataForm{
+    padding-top: 2%;
+    text-align: justify;
+    font-size: 20px;
+    background-color: rgba(245, 245, 255, 0.5);
+    color: black;
+    width: 50%;
+    border-radius: 4px;
+    box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#contactForm{
+    padding-top: 2%;
+    text-align: justify;
+    font-size: 20px;
+    background-color: rgba(245, 245, 255, 0.5);
+    color: black;
+    width: 50%;
+    border-radius: 4px;
+    box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#allData{
+    text-align: center;
+    background-color: rgba(245, 245, 255, 0.5);
+    color: black;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    width: 100%;
+}
+/*Sección de Emociones*/
+#videoEmotion{
+    display: none;
+    padding-left: 20px;
+}
+#imgEmotions{
+    margin-left: 10px;
+    width: 108%;
+    height: 96%;
+}
+/*Sección de Salud*/
+#sectionSalu{
+    padding-top: 25px;
+    font-size: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 20px;
+    width: 72%;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+    box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#connectButton{
+    display: block;
+    margin: 10px auto;
+    border-radius: 100px;
+    border: 3px solid navy;
+    background-color: blue;
+    color: cornsilk;
+}
+
+#connectButton:hover{
+    background-color:indigo;
+}
+#saveButton{
+    display: block;
+    margin: 10px auto;
+    border-radius: 100px;
+    border: 1px solid palevioletred;
+    background-color: aqua;
+}
+
+#saveButton:hover{
+    background-color: purple;
+    color: cornsilk;
+}
+
+.input{
+    border: none;
+    background-color: #181f2a;
+    color: cornsilk;
+}
+/*Sección de Objetos*/
+#sectionObj{
+    display: none;
+    padding-left: 20px;
+}
+
+#imgObj{
+    margin-left: 10px;
+    width: 122%;
+    height: 99%;
+}
+
+/*Diseño responsivo*/
+@media all and (max-width: 800px){
+    /*Área de controles*/
+    .mainBox{
+        width: 100%;
+        order: 2;
+    }
+     #menu{
+         margin: 10px;
+         flex-direction: column;
+     }
+
+     .alertsform{
+         margin: 10px;
+         justify-content: center;
+     }
+
+     .alertsform input{
+        margin-left: 100px;
+     }
+
+     .alertsform button{
+        margin-left: 100px;
+     }
+
+     .alertsform label{
+        margin-left: 100px;
+     }
+
+     /*Área de monitoreo*/
+     #videos{
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 40px;
+    }
+    
+    #play{
+        width: 100%;
+        height: 100%;
+    }
+
+    /*Área de base de datos*/
+    #bd{
+        margin: 10px;
+        margin-top: 10px;
+        order: 2;
+        width: 100%;
+        border: 1px solid whitesmoke;
+        border-radius: 4px;
+        box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+
+    #dataForm{
+        text-align: center;
+        font-size: 15px;
+        background-color: rgba(245, 245, 255, 0.5);
+        color: black;
+        width: 100%;
+        border-radius: 4px;
+        box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    #contactForm{
+        margin-top: 5px;
+        text-align: center;
+        font-size: 15px;
+        background-color: rgba(245, 245, 255, 0.5);
+        color: black;
+        width: 100%;
+        border-radius: 4px;
+        box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    #allData{
+        margin-top: 10px;
+        text-align: center;
+        background-color: rgba(245, 245, 255, 0.5);
+        color: black;
+        overflow: hidden;
+        overflow-y: scroll;
+        overflow-x: scroll;
+        width: 100%;
+    }
+
+    /*Área de emociones*/
+    #videoEmotion{
+        margin-right: 40px;
+        margin-bottom: 10px;
+        display: none;
+    }
+    #imgEmotions{
+        width: 100%;
+        height: 100%;
+    }
+    /*Área de objetos*/
+    #sectionObj{
+        margin-right: 40px;
+        margin-bottom: 10px;
+        display: none;
+    }
+    #imgObj{
+        width: 100%;
+        height: 100%;
+    }
+    /*Área de Salud*/
+    #sectionSalu{
+        text-align: center;
+        font-size: 15px;
+        margin: 10px;
+        margin-top: 10px;
+        order: 2;
+        width: 100%;
+        border: 1px solid whitesmoke;
+        border-radius: 4px;
+        box-shadow: -3px -3px 10px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 10px rgba(255, 255, 255, 0.5), inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+}

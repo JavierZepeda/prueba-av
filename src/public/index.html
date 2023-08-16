@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#181f2a">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" type="image/png" href="img/icon_96.png">
+    <link rel="apple-touch-icon" href="img/icon_1024.png">
+    <link rel="apple-touch-startup-image" href="img/icon_1024.png">
+    <link rel="manifest" href="manifest.json">
+
+    <script src="libraries/socket.io.js"></script>
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.dom.min.js"></script>
+    <script src="libraries/p5.vida.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Monitoreo Inteligente de Adultos Mayores</title>
+</head>
+<body>
+    <!--Sección de controles-->
+    <main id="main">
+        <div class="mainBox">
+            <div class="head">
+                <h1>Monitoreo Inteligente</h1>
+                <div id="menu">
+                    <button id="base" class="link">Base de datos</button>
+                    <button id="monitoreo" class="link">Monitoreo</button>
+                    <button id="emotion" class="link">Emociones</button>
+                    <button id="salud" class="link">Salud</button>
+                    <button id="objetos" class="link">Objetos</button>
+                </div>
+            </div>
+
+            <div class="controls">
+                <h2>Controles</h2>
+                <button id="objButton"><i class="fas fa-video"> </i> Iniciar Objetos</button>
+                <button id="emotionsButton"><i class="fas fa-video"> </i> Iniciar Emociones</button>
+                <button id="button"><i class="fas fa-video"> </i> Iniciar Transmisión</button><br>
+                <div class="timeBox">
+                    <div id="emotionsTimeBox">
+                        <label for="alertaEmotion" class="alerts">Emociones <i class="fas fa-portrait"> </i></label>
+                        <input type="number" min="1" max="100" id="alertaEmotion" class="setTime" required>
+                        <button id="setAlertaE" class="setTimeButton">Set Time</button>
+                    </div>
+
+                    <div id="monitorTimeBox">
+                        <div class="alertsForm">
+                            <label for="alerta1" class="alerts">Movimiento <i class="fas fa-street-view"> </i></label>
+                            <input type="number" min="1" max="400" id="alerta1" class="setTime" required>
+                            <button id="setAlerta1" class="setTimeButton">Set Time</button><br>
+                        </div>
+
+                        <div class="alertsForm">
+                            <label for="alerta2" class="alerts">Auxilio <i class="fas fa-child"> </i></label>
+                            <input type="number" min="1" max="400" id="alerta2" class="setTime" required>
+                            <button id="setAlerta2" class="setTimeButton">Set Time</button>
+                        </div>
+
+                        <div class="alertsForm">
+                            <label for="alerta3" class="alerts">Caída <i class="fas fa-pray"> </i></label>
+                            <input type="number" min="1" max="400" id="alerta3" class="setTime" required>
+                            <button id="setAlerta3" class="setTimeButton">Set Time</button>
+                        </div>
+
+                        <div class="alertsForm">
+                            <label for="alerta4" class="alerts">Ausencia <i class="fas fa-people-arrows"> </i></label>
+                            <input type="number" min="1" max="400" id="alerta4" class="setTime" required>
+                            <button id="setAlerta4" class="setTimeButton">Set Time</button><br>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="objectTimeBox">
+                            <label for="alertaObj" class="alerts">Alerta de Intruso <i class="fa-aperture"> </i></label>
+                            <input type="number" min="1" max="100" id="alertaObj" class="setTime" required>
+                            <button id="setAlertaObj" class="setTimeButton">Set Time</button>
+                        </div>
+                    </div>
+                </div>
+                <button id="clearHistB"><i class="fas fa-broom"> </i> Limpiar Historial</button>
+            </div>
+
+            <div class="alertasBox">
+                <h3>Historial de alertas</h3>
+                <span id="reloj">Date 00 : 00 : 00</span>
+                <div id="alertas"></div>
+            </div>
+        </div>
+        <!--Sección Monitoreo-->
+        <div id="videos">
+            <img id = "play">
+        </div>
+        <!--Sección Base de datos-->
+        <div id="bd">
+            <div id="dataForm">
+                <h2>Datos de Adulto Mayor</h2>
+                <form action="/add" method="post">
+                    <label for="nombre"><i class="fas fa-user-plus"> </i> Nombre</label>
+                    <input type="text" name="nombre" required><br>
+
+                    <label for="fechaNac"><i class="fas fa-birthday-cake"> </i> Fecha de nacimiento</label>
+                    <input type="date" name="fechaNac" required><br>
+
+                    <label for="genero"><i class="fas fa-venus-mars"> </i> Género</label>
+                    <select name="genero">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select><br>
+
+                    <label for="padecimiento"><i class="fas fa-head-side-cough"> </i> Padecimiento</label>
+                    <input type="text" name="padecimiento" required><br>
+
+                    <label for="discapacidad"><i class="fas fa-wheelchair"> </i> Discapacidad</label>
+                    <input type="text" name="discapacidad" required><br>
+
+                    <button id="saveAM" type = "submit"><i class="fas fa-save"> </i> Guardar</button>
+                </form>
+            </div>
+
+            <div id="contactForm">
+                <h2>Datos de Contacto</h2>
+                <form action="/addContact" method="post">
+                    <label for="nombre_Contacto"><i class="fas fa-user-plus"> </i> Nombre</label>
+                    <input type="text" name="nombre_Contacto" required><br>
+
+                    <label for="telefono"><i class="fas fa-phone-alt"> </i> Teléfono</label>
+                    <input type="text" name="telefono" required><br>
+
+                    <label for="correo"><i class="far fa-envelope"> </i> Correo</label>
+                    <input type="email" name="correo" required><br>
+
+                    <label for="parentesco"><i class="fas fa-users"> </i> Parentesco</label>
+                    <input type="text" name="parentesco" required><br>
+
+                    <button id="saveContact" type ="submit"><i class="fas fa-save"> </i> Guardar</button>
+                </form>
+            </div>
+
+            <div id="allData">
+                <button><i class="fas fa-chart-bar"> </i> Ver informe</button>
+            </div>
+        </div>
+        <!--Sección Emociones-->
+        <div id="videoEmotion"> 
+            <img id="imgEmotions">
+        </div>
+        <!--Sección Salud-->
+        <div id="sectionSalu">
+            <button id="connectButton"><i class="fa-brands fa-bluetooth-b"></i> Emparejar</button>
+            <form action="/addBluetooth" method="post">
+                <label for="frecuencia_cardiaca"><i class="fa-solid fa-heart-pulse"> </i> Frecuencia Cardiaca</label>
+                <input name="frecuencia_cardiaca" id="bpm" class="input" readonly required> <br>
+
+                <label for="fecha"><i class="fa-solid fa-calendar-day"> </i> Fecha</label>
+                <input name="fecha" id="date" class="input" readonly required><br>
+        
+                <label for="hora"><i class="fa-solid fa-clock"> </i> Hora</label>
+                <input name="hora" id="hour" class="input" readonly required> <br>
+                <button id="saveButton" type="submit"><i class="fas fa-save"> </i> Guardar</button>
+
+                <span id="batteryLabel"></span>
+            </form>
+        </div>
+        <!--Sección de Ojetos-->
+        <div id="sectionObj">
+            <img id="imgObj">
+        </div>
+    </main>
+    
+    <script src="js/bluetooth.js"></script>
+    <script src="js/client.js"></script>
+    <script src="sw.js"></script>
+    <script src="js/install.js"></script>
+</body>
+</html>
